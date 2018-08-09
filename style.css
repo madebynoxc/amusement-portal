@@ -1,0 +1,47 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+.head-wrapper { 
+  height: 500px;
+  width: 100%;
+  left:0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  background: linear-gradient(154deg, #C75E48, #F9BF5C, #ffcf40,  #50c8cc, #35a4a7, #1d817e);
+  background-size: 400% 400%;
+
+  -webkit-animation: rainbow 9s ease infinite;
+  -z-animation: rainbow 9s ease infinite;
+  -o-animation: rainbow 9s ease infinite;
+  animation: rainbow 9s ease infinite;
+}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+.head-content {
+  display: flex;
+  width: 800px;
+  height: 100%;
+}
