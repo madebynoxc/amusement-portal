@@ -13,69 +13,66 @@ body {
   right: 0;
   top: 0;
   bottom: 0;
-
-  -webkit-animation: rainbow 20s ease infinite;
+  /*-webkit-animation: rainbow 20s ease infinite;
   -z-animation: rainbow 20s ease infinite;
-  -o-animation: rainbow 20s ease infinite;
-  animation: rainbow 20s ease infinite;
+  -o-animation: rainbow 20s ease infinite;*/
+  
 }
 
-@-webkit-keyframes rainbow {
-  0% { background-color: #ebb35b; }
-  10% { background-color: #e8ad5a; }
-  20% { background-color: #f8d148; }
-  30% { background-color: #adcd86; }
-  40% { background-color: #5abec1; }
-  50% { background-color: #4faeb1; }
-  60% { background-color: #5abec1; }
-  70% { background-color: #adcd86; }
-  80% { background-color: #f8d148; }
-  90% { background-color: #e8ad5a; }
-  100% { background-color: #ebb35b; }
+.back-image {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 500px;
+  background-image: url("https://amusementclub.nyc3.digitaloceanspaces.com/web/blurback.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  animation: rainbow ease-out 120s infinite;
+  z-index: -1;
+  opacity: .8;
 }
-@-moz-keyframes rainbow {
-  0% { background-color: #ebb35b; }
-  10% { background-color: #e8ad5a; }
-  20% { background-color: #f8d148; }
-  30% { background-color: #adcd86; }
-  40% { background-color: #5abec1; }
-  50% { background-color: #4faeb1; }
-  60% { background-color: #5abec1; }
-  70% { background-color: #adcd86; }
-  80% { background-color: #f8d148; }
-  90% { background-color: #e8ad5a; }
-  100% { background-color: #ebb35b; }
+
+@-webkit-keyframes rainbow { 
+  0% { filter: hue-rotate(100deg); background-position: 0 0}
+  20% { filter: hue-rotate(-100deg); }
+  30% { filter: hue-rotate(50deg); }
+  50% { filter: hue-rotate(0deg); background-position: 0 100% }
+  70% { filter: hue-rotate(50deg); }
+  80% { filter: hue-rotate(-100deg); }
+  100% { filter: hue-rotate(100deg); background-position: 0 0 }
 }
-@-o-keyframes rainbow {
-  0% { background-color: #ebb35b; }
-  10% { background-color: #e8ad5a; }
-  20% { background-color: #f8d148; }
-  30% { background-color: #adcd86; }
-  40% { background-color: #5abec1; }
-  50% { background-color: #4faeb1; }
-  60% { background-color: #5abec1; }
-  70% { background-color: #adcd86; }
-  80% { background-color: #f8d148; }
-  90% { background-color: #e8ad5a; }
-  100% { background-color: #ebb35b; }
+@-moz-keyframes rainbow { 
+  0% { filter: hue-rotate(100deg); background-position: 0 0}
+  20% { filter: hue-rotate(-100deg); }
+  30% { filter: hue-rotate(50deg); }
+  50% { filter: hue-rotate(0deg); background-position: 0 100% }
+  70% { filter: hue-rotate(50deg); }
+  80% { filter: hue-rotate(-100deg); }
+  100% { filter: hue-rotate(100deg); background-position: 0 0 }
+}
+@-o-keyframes rainbow { 
+  0% { filter: hue-rotate(100deg); background-position: 0 0}
+  20% { filter: hue-rotate(-100deg); }
+  30% { filter: hue-rotate(50deg); }
+  50% { filter: hue-rotate(0deg); background-position: 0 100% }
+  70% { filter: hue-rotate(50deg); }
+  80% { filter: hue-rotate(-100deg); }
+  100% { filter: hue-rotate(100deg); background-position: 0 0 }
 }
 @keyframes rainbow { 
-  0% { background-color: #ebb35b; }
-  10% { background-color: #e8ad5a; }
-  20% { background-color: #f8d148; }
-  30% { background-color: #adcd86; }
-  40% { background-color: #5abec1; }
-  50% { background-color: #4faeb1; }
-  60% { background-color: #5abec1; }
-  70% { background-color: #adcd86; }
-  80% { background-color: #f8d148; }
-  90% { background-color: #e8ad5a; }
-  100% { background-color: #ebb35b; }
+  0% { filter: hue-rotate(100deg); background-position: 0 0}
+  20% { filter: hue-rotate(-100deg); }
+  30% { filter: hue-rotate(50deg); }
+  50% { filter: hue-rotate(0deg); background-position: 0 100% }
+  70% { filter: hue-rotate(50deg); }
+  80% { filter: hue-rotate(-100deg); }
+  100% { filter: hue-rotate(100deg); background-position: 0 0 }
 }
 
 a {
   text-decoration: none;
-  color: #36393e;
+  color: #fff;
 }
 
 b {
@@ -90,7 +87,6 @@ b {
   width: 800px;
   height: 100%;
   margin: auto;
-  color: #36393e;
 }
   
   .head-content .daily-card {
@@ -117,14 +113,12 @@ b {
       width: 100%;
       margin: auto;
       margin-top: 25px;
-      -webkit-box-shadow: 0px 3px 54px 0px rgba(0,0,0,0.42);
-      -moz-box-shadow: 0px 3px 54px 0px rgba(0,0,0,0.42);
-      box-shadow: 0px 3px 54px 0px rgba(0,0,0,0.42);
+      filter: drop-shadow(0px 0px 15px rgba(0,0,0,0.75));
       transition: .2s;
     }
 
     .head-content .daily-card img:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
       transition: .2s;
     } 
 
@@ -158,7 +152,7 @@ b {
   }
 
     .head-content span.title {
-      font-size: 40px;
+      font-size: 50px;
       text-transform: uppercase;
       font-weight: 300;
       margin-top: 120px;
@@ -169,11 +163,35 @@ b {
 /*BODY*/
 
 
+.main {
+  width: 100%;
+  background-color: #36393e;
+  -webkit-box-shadow: 0px 0px 25px 0px rgba(36,36,36,1);
+  -moz-box-shadow: 0px 0px 25px 0px rgba(36,36,36,1);
+  box-shadow: 0px 0px 30px 0px rgba(10,10,10,.9);
+}
+
 .container {
   width: 800px;
   margin: auto;
   color: #fff;
 }
+  
+  .container .video {
+    display: inline-block;
+    width: 400px;
+    margin-left: 50px;
+    margin-top: 20px;
+    vertical-align: top;
+    background-color: #35383E;
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(36,36,36,1);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(36,36,36,1);
+    box-shadow: 0px 0px 20px 0px rgba(36,36,36,1);
+  }
+
+    .container .video video {
+      width: 100%;
+    }
   
   .container .article {
     margin-top: 50px;
@@ -185,15 +203,29 @@ b {
       font-size: 35px;
       font-weight: 300;
       color: #e8ad5a;
-      margin: 20px 0;
+      /*background: linear-gradient(to right, #ebb35b,  #e8ad5a, #f8d148, #adcd86, #5abec1, #4faeb1, #5abec1, #adcd86, #f8d148, #e8ad5a, #ebb35b);
+      background-size: 200% auto;
+      background-clip: text;
+      text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 10px 0;
+      animation: shine 10s linear infinite;*/
+    }
+
+    @keyframes shine {
+      to {
+        background-position: 200% center;
+      }
     }
 
       .container .article p {
-        display: block;
+        display: inline-block;
         font-size: 18px;
         font-weight: 300;
         line-height: 25px;
         letter-spacing: 1px;
+        width: 350px;
       }
 
   .container .stats {
@@ -219,4 +251,82 @@ b {
         font-size: 35px;
         font: sans-serif;
         color: #5fc3c7;
+        background: linear-gradient(to right, #ebb35b,  #e8ad5a, #f8d148, #adcd86, #5abec1, #4faeb1, #5abec1, #adcd86, #f8d148, #e8ad5a, #ebb35b);
+        background-size: 400% 400%;
+        background-clip: text;
+        text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 10px 0;
+        animation: shine2 10s linear infinite;
       }
+
+      @keyframes shine2 {
+        to {
+          background-position: 400% 400%;
+        }
+      }
+
+
+/*CODEBLOCK*/
+
+pre code {
+  background-color: rgba(20,20,20,0.3);
+  border-radius: 3px;
+  display: block;
+  padding: 20px;
+}
+
+code {
+  display: inline;
+  font-family: Consolas, Menlo, Courier, monospace;
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  border-radius: 3px;
+  background-color: rgba(20,20,20,0.3);
+}
+
+/*FOOTER*/
+
+.footer {
+    width: 100%;
+    height: 75px;
+    bottom: 0;
+    background-color: #2c2c2c;
+}
+
+.footer .content {
+    width: 800px;
+    height: 100%;
+    position: relative;
+    margin: auto;
+    vertical-align: top;
+}
+  .footer .content img {
+    margin: 10px;
+    height: 36px;
+    margin-top: 20px;
+  }
+
+    .footer .content img.right {
+        float: right;
+    }
+
+  .footer .content .centered {
+      display: inline-block;
+      position: absolute;
+      margin: auto;
+      right: 0;
+      left: 0;
+      width: 500px;
+      text-align: center;
+      margin-top: 25px;
+      font-size: 20px;
+  }
+
+    .footer .content .centered span {
+        display: block;
+        height: 100%;
+        text-align: center;
+    }

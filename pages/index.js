@@ -1,6 +1,7 @@
 import '../style.css';
 import 'isomorphic-unfetch';
 import StatCounter from '../components/statcounter'
+import Footer from '../components/footer'
 
 export default class Index extends React.Component {
 
@@ -14,6 +15,7 @@ export default class Index extends React.Component {
         return (<div>
 
             <div className="head-wrapper">
+                <div className="back-image"/>
                 <div className="head-content">
                     <div className="desc-content">
                         <span className="title">stay amused</span>
@@ -43,7 +45,8 @@ export default class Index extends React.Component {
                 </div>
             </div>
 
-            <div className="container">
+            <div className="main">
+                <div className="container">
                     <div className="stats">
                         <StatCounter title="servers" minValue={0} maxValue={this.props.stats.servers} />
                         <StatCounter title="cards" minValue={0} maxValue={this.props.stats.cards} />
@@ -56,15 +59,26 @@ export default class Index extends React.Component {
                     <div className="article">
                         <span className="title">Get Started</span>
                         <p>
-                            Amusement Club is an amazing gacha game for discord! Bot already has more than 10,000 cards from over more than 50 fandoms created and submitted by people from bot's community. After one year in service it currently has more than 1500 active weekly users of 5000+ players overall from hundreds of servers. Use ->claim to get cards for tomatoes (in-game currency). You can use ->daily every 20 hours and get free tomatoes. Get a hero after 50 Stars and earn tomatoes from completing ->quests that you get with ->daily and trading using ->sell and ->auction!
+                            Amusement Club is an amazing gacha game for discord! Bot already has more than 10,000 cards from over more than 50 fandoms created and submitted by people from bot's community. After one year in service it currently has more than 1500 active weekly users of 5000+ players overall from hundreds of servers. Use <code>->claim</code> to get cards for tomatoes (in-game currency). You can use ->daily every 20 hours and get free tomatoes. Get a hero after 50 Stars and earn tomatoes from completing ->quests that you get with ->daily and trading using ->sell and ->auction!
                         </p>
+
+                        <div className="video">
+                            <video autoplay="true" muted="true" loop="true">
+                                <source src="https://amusementclub.nyc3.digitaloceanspaces.com/web/demonstration.mp4" type="video/mp4"/>
+                            </video>
+                        </div>
+                    </div>
+
+                    <div className="article">
                         <span className="title">Something Else</span>
                         <p>
                             Amusement Club is an amazing gacha game for discord! Bot already has more than 10,000 cards from over more than 50 fandoms created and submitted by people from bot's community. After one year in service it currently has more than 1500 active weekly users of 5000+ players overall from hundreds of servers. Use ->claim to get cards for tomatoes (in-game currency). You can use ->daily every 20 hours and get free tomatoes. Get a hero after 50 Stars and earn tomatoes from completing ->quests that you get with ->daily and trading using ->sell and ->auction!
                         </p>
                     </div>
+                </div>
             </div>
 
+            <Footer />
         </div>)
     }
 }
