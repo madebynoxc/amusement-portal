@@ -28,7 +28,7 @@ body {
   background-image: url("https://amusementclub.nyc3.digitaloceanspaces.com/web/blurback.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
-  animation: rainbow ease-out 120s infinite;
+  animation: rainbow ease-out 90s infinite;
   z-index: -1;
   opacity: .8;
 }
@@ -113,13 +113,13 @@ b {
       width: 100%;
       margin: auto;
       margin-top: 25px;
-      filter: drop-shadow(0px 0px 15px rgba(0,0,0,0.75));
-      transition: .2s;
+      filter: drop-shadow(0px 0px 15px rgba(0,0,0,0.75)) saturate(1);
+      transition: .5s;
     }
 
     .head-content .daily-card img:hover {
-      transform: scale(1.05);
-      transition: .2s;
+      filter: drop-shadow(0px 0px 15px rgba(0,0,0,0.75)) saturate(1.5);
+      transition: .5s;
     } 
 
   .head-content .desc-content {
@@ -144,19 +144,53 @@ b {
     transition: .2s;
   }
 
-  .head-content span {
+  .head-content button {
+    background-color: #36393e;
+    font-size: 20px;
+    padding: 15px;
+    color: #fff;
+    margin-left: 40px;
+    margin-top: 50px;
+  }
+
+  .head-content button:hover {
+    background-color: #2c2c2c;
+  }
+
+    .head-content button > span:first-child {
+      background: radial-gradient(#ebb35b,  #e8ad5a, #f8d148, #adcd86, #5abec1, #4faeb1, #5abec1, #adcd86, #f8d148, #e8ad5a, #ebb35b); 
+      background-size: 500% 500%;
+      background-clip: text;
+      text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 45s linear infinite;
+    }
+
+    .head-content button img {
+      margin-right: 15px;
+    }
+
+  @keyframes shine {
+    to {
+      background-position: 500% 500%;
+    }
+  }
+
+  .head-content span.text {
     display: block;
     font-size: 16px;
     margin-top: 20px;
     width: 350px;
   }
 
-    .head-content span.title {
-      font-size: 50px;
-      text-transform: uppercase;
-      font-weight: 300;
-      margin-top: 120px;
-    }
+  .head-content span.title {
+    display: block;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-top: 120px;
+  }
 
 
 
@@ -184,9 +218,6 @@ b {
     margin-top: 20px;
     vertical-align: top;
     background-color: #35383E;
-    -webkit-box-shadow: 0px 0px 20px 0px rgba(36,36,36,1);
-    -moz-box-shadow: 0px 0px 20px 0px rgba(36,36,36,1);
-    box-shadow: 0px 0px 20px 0px rgba(36,36,36,1);
   }
 
     .container .video video {
@@ -213,12 +244,6 @@ b {
       animation: shine 10s linear infinite;*/
     }
 
-    @keyframes shine {
-      to {
-        background-position: 200% center;
-      }
-    }
-
       .container .article p {
         display: inline-block;
         font-size: 18px;
@@ -237,12 +262,13 @@ b {
       margin: auto;
       text-align: center;
       margin-top: 25px;
-      margin-right: 48px;
+      width: 160px;
+      white-space: nowrap;
     }
 
       .container .stats div span {
         display: block;
-        font-size: 25px;
+        font-size: 22px;
         font-weight: 900;
         /*color: #e8ad5a;*/
       }
@@ -291,7 +317,6 @@ code {
 
 .footer {
     width: 100%;
-    height: 75px;
     bottom: 0;
     background-color: #2c2c2c;
 }
@@ -303,30 +328,47 @@ code {
     margin: auto;
     vertical-align: top;
 }
+
+  .footer .content .block {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    margin: 20px 0;
+  }
+
+    .footer .content .block span {
+      display: block;
+      font-size: 14px;
+    }
+
+    .footer .content .block span.title {
+      font-weight: bold;
+      font-size: 25px;
+    }
+
+    .footer .content .block ul {
+      list-style: none;
+      padding: 0;
+    }
+
+      .footer .content .block ul li {
+        opacity: .6;
+      }
+
+      .footer .content .block ul li:hover {
+        opacity: 1;
+      }
+
   .footer .content img {
-    margin: 10px;
-    height: 36px;
-    margin-top: 20px;
+    width: 136px;
+    margin-bottom: 10px;
   }
 
-    .footer .content img.right {
-        float: right;
-    }
-
-  .footer .content .centered {
-      display: inline-block;
-      position: absolute;
-      margin: auto;
-      right: 0;
-      left: 0;
-      width: 500px;
+  .footer .content .centered-span {
+      display: block;
+      width: 100%;
+      font-size: 14px;
       text-align: center;
-      margin-top: 25px;
-      font-size: 20px;
+      margin-top: -20px;
+      margin-bottom: 20px;
   }
-
-    .footer .content .centered span {
-        display: block;
-        height: 100%;
-        text-align: center;
-    }
