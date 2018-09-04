@@ -27,10 +27,11 @@ body {
   height: 500px;
   background-image: url("https://amusementclub.nyc3.digitaloceanspaces.com/web/blurback.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
-  animation: rainbow ease-out 90s infinite;
+  background-size: cover;
+  animation: rainbow linear 70s infinite;
   z-index: -1;
   opacity: .8;
+  background-blend-mode: screen;
 }
 
 @-webkit-keyframes rainbow { 
@@ -114,12 +115,13 @@ b {
       margin: auto;
       margin-top: 25px;
       filter: drop-shadow(0px 0px 15px rgba(0,0,0,0.75)) saturate(1);
-      transition: .5s;
+      transition: .25s;
     }
 
     .head-content .daily-card img:hover {
       filter: drop-shadow(0px 0px 15px rgba(0,0,0,0.75)) saturate(1.5);
-      transition: .5s;
+      transform: translateY(-5px);
+      transition: .25s;
     } 
 
   .head-content .desc-content {
@@ -200,9 +202,9 @@ b {
 .main {
   width: 100%;
   background-color: #36393e;
-  -webkit-box-shadow: 0px 0px 25px 0px rgba(36,36,36,1);
-  -moz-box-shadow: 0px 0px 25px 0px rgba(36,36,36,1);
-  box-shadow: 0px 0px 30px 0px rgba(10,10,10,.9);
+  box-shadow: 0px -1px 5px 0px rgba(0, 0, 0, 0.2), 
+              0px -2px 2px 0px rgba(0, 0, 0, 0.14), 
+              0px -3px 1px -2px rgba(0, 0, 0, 0.12);
 }
 
 .container {
@@ -225,33 +227,124 @@ b {
     }
   
   .container .article {
-    margin-top: 50px;
+    margin-top: 30px;
     width: 100%;
   }
 
-    .container .article .title {
+    .container .article span {
+      display: block;
+      margin: 0 150px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .container .article h1 {
+      width: 100%;
       display: block;
       font-size: 35px;
       font-weight: 300;
       color: #e8ad5a;
-      /*background: linear-gradient(to right, #ebb35b,  #e8ad5a, #f8d148, #adcd86, #5abec1, #4faeb1, #5abec1, #adcd86, #f8d148, #e8ad5a, #ebb35b);
-      background-size: 200% auto;
-      background-clip: text;
-      text-fill-color: transparent;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin: 10px 0;
-      animation: shine 10s linear infinite;*/
+      text-align: center;
+      margin: 30px 0;
     }
 
-      .container .article p {
+    .container .article .title {
+      display: inline-block;
+      font-size: 30px;
+      color: #4faeb1;
+      vertical-align: top;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+      .container .article div {
         display: inline-block;
         font-size: 18px;
         font-weight: 300;
         line-height: 25px;
         letter-spacing: 1px;
         width: 350px;
+        vertical-align: top;
       }
+
+      .container .article div.feature {
+        margin-top: 20px;
+        margin-left: 30px;
+        width: 400px;
+        height: 100%;
+      }
+
+      .container .article img {
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 25px;
+        letter-spacing: 1px;
+        margin-top: 20px;
+        width: 350px;
+        border-radius: 4px;
+        vertical-align: top;
+        box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 
+                    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 
+                    0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+      }
+
+      .container .article .card {
+        display: inline-block;
+        margin: 10px;
+        background-color: #2c2c2c;
+        width: 245px;
+        transition: .5s;
+      }
+
+      .container .article .card:hover {
+        transform: translateY(-5px);
+        transition: .25s;
+      } 
+
+        .container .article .card h3 {
+          margin: 10px 0;
+          font-size: 20px;
+          width: 100%;
+          text-align: center;
+        }
+
+        .container .article .card img {
+          width: 100%;
+          margin: 0;
+          transition: .25s;
+        }
+
+        .container .article .card img:hover {
+          filter: blur(5px);
+          opacity: .25;
+          transition: .25s;
+        }
+
+        .container .article .card div.caption {
+          display: block;
+          position: absolute;
+          width: 245px;
+          text-align: center;
+          margin-top: -250px;
+          opacity: 0;
+          transition: .25s;
+          pointer-events: none;
+        }
+
+          .container .article .card div.caption img {
+            display: block;
+            border-radius: 100%;
+            width: 50px;
+            margin: auto;
+            margin-bottom: 20px;
+          }
+
+        .container .article .card img:hover + div {
+          opacity: 1;
+          transition: .25s;
+        }
 
   .container .stats {
     width: 100%;
