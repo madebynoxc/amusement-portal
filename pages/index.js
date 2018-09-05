@@ -24,7 +24,7 @@ export default class Index extends React.Component {
                         <span className="title">stay amused</span>
                         <span className="text">Amusement Club is a global Discord bot for collecting amazing cards from your favourite show or game!</span>
                         <span className="text">Gift a fun game to your discord community!</span>
-                        <a href="https://discordapp.com/oautdiv/authorize?client_id=340988108222758934&scope=bot&permissions=126017">
+                        <a href="https://discordapp.com/oauth2/authorize?client_id=340988108222758934&scope=bot&permissions=126017">
                             <Button variant="contained">
                                 <img src="https://amusementclub.nyc3.digitaloceanspaces.com/web/discord_logo.svg"/>
                                 Add to Discord
