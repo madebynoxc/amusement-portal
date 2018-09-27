@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', 'sans-serif';
   color: #fff;
   background-color: #36393e;
   font-weight: 600;
@@ -160,6 +160,8 @@ b {
   }
 
     .head-content button > span:first-child {
+      display: block;
+      vertical-align: top;
       background: radial-gradient(#ebb35b,  #e8ad5a, #f8d148, #adcd86, #5abec1, #4faeb1, #5abec1, #adcd86, #f8d148, #e8ad5a, #ebb35b); 
       background-size: 500% 500%;
       background-clip: text;
@@ -167,6 +169,10 @@ b {
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: shine 45s linear infinite;
+    }
+
+    .head-content button img {
+      vertical-align: bottom;
     }
 
     .head-content button img {
@@ -368,14 +374,7 @@ b {
 
       .container .stats div span.numbers {
         font-size: 35px;
-        font: sans-serif;
         color: #5fc3c7;
-        background: linear-gradient(to right, #ebb35b,  #e8ad5a, #f8d148, #adcd86, #5abec1, #4faeb1, #5abec1, #adcd86, #f8d148, #e8ad5a, #ebb35b);
-        background-size: 400% 400%;
-        background-clip: text;
-        text-fill-color: transparent;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
         margin: 10px 0;
         animation: shine2 10s linear infinite;
       }

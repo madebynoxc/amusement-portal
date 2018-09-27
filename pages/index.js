@@ -5,6 +5,7 @@ import Footer from '../components/footer';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
+import Icon from '@material-ui/core/Icon';
 
 export default class Index extends React.Component {
 
@@ -26,7 +27,7 @@ export default class Index extends React.Component {
                         <span className="text">Gift a fun game to your discord community!</span>
                         <a href="https://discordapp.com/oauth2/authorize?client_id=340988108222758934&scope=bot&permissions=126017">
                             <Button variant="contained">
-                                <img src="https://amusementclub.nyc3.digitaloceanspaces.com/web/discord_logo.svg"/>
+                                <Icon className="button-icon"><img src="https://amusementclub.nyc3.digitaloceanspaces.com/web/discord_logo.svg" /></Icon>
                                 Add to Discord
                             </Button>
                         </a>
