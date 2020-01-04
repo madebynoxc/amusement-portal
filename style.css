@@ -305,13 +305,24 @@ b {
       }
 
       .container .article .card:hover {
-        transform: translateY(-5px);
         transition: .25s;
       } 
 
         .container .article .card h3 {
           margin: 10px 0;
           font-size: 20px;
+          width: 100%;
+          text-align: center;
+        }
+
+          .container .article .card h3 b {
+            font-size: 32px;
+            color: #4faeb1;
+          }
+
+        .container .article .card p {
+          margin: 5px 0;
+          font-size: 17px;
           width: 100%;
           text-align: center;
         }
@@ -323,8 +334,7 @@ b {
         }
 
         .container .article .card img:hover {
-          filter: blur(5px);
-          opacity: .25;
+          opacity: .15;
           transition: .25s;
         }
 
