@@ -5,17 +5,17 @@ import { login } from '../utils/auth'
 
 const Login = props => {
   const [userData, setUserData] = useState({ username: '', error: '' })
-  //login({ token: props.token })
+  login(props)
 
   const handleSubmit = async event => {
-    event.preventDefault()
+    /*event.preventDefault()
     setUserData(Object.assign({}, userData, { error: '' }))
 
     const username = userData.username
     const url = '/api/login'
     console.log(props)
 
-    /*try {
+    try {
       const response = await fetch(url, {
         method: 'POST',
 
@@ -103,10 +103,6 @@ const Login = props => {
       `}</style>
     </Layout>
   )
-}
-
-Login.getInitialProps = async ({query}) => {
-  return { token: query.token }
 }
 
 export default Login

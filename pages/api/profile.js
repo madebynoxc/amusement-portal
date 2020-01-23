@@ -1,33 +1,24 @@
 import fetch from 'isomorphic-unfetch'
+import DiscordOauth2 from 'discord-oauth2'
 
 export default async (req, res) => {
   if (!('authorization' in req.headers)) {
     return res.status(401).send('Authorization header missing')
   }
 
+  const oauth = new DiscordOauth2()
   const auth = await req.headers.authorization
 
   try {
     const { token } = JSON.parse(auth)
-    const url = `https://api.github.com/user/${token}`
+    const user = await oauth.getUser(token)
 
-    const response = await fetch(url)
-
-    if (response.ok) {
-      const js = await response.json()
-      // Need camelcase in the frontend
-      const data = Object.assign({}, { avatarUrl: js.avatar_url }, js)
-      return res.status(200).json({ data })
+    if (user) {
+      return res.status(200).json({ user })
     } else {
-      // https://github.com/developit/unfetch#caveats
-      const error = new Error(response.statusText)
-      error.response = response
-      throw error
+      throw new Error('Cannot get user')
     }
   } catch (error) {
-    const { response } = error
-    return response
-      ? res.status(response.status).json({ message: response.statusText })
-      : res.status(400).json({ message: error.message })
+    return res.status(400).json({ message: error.message })
   }
 }

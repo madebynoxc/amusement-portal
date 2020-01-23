@@ -3,18 +3,22 @@ import Router from 'next/router'
 import fetch from 'isomorphic-unfetch'
 import nextCookie from 'next-cookies'
 import Layout from '../components/layout'
-import { withAuthSync } from '../utils/auth'
+import { withAuthSync, login } from '../utils/auth'
 import getHost from '../utils/get-host'
+import cookie from 'js-cookie'
 
 const Profile = props => {
-  const { name, login, bio, avatarUrl } = props.data
+  console.log(props)
+  const { username, id, avatar } = props.user
+
+  if(props.token)
+    cookie.set('token', props.token, { expires: 1 })
 
   return (
     <Layout>
-      <img src={avatarUrl} alt="Avatar" />
-      <h1>{name}</h1>
-      <p className="lead">{login}</p>
-      <p>{bio}</p>
+      <img src={avatar} alt="Avatar" />
+      <h1>{username}</h1>
+      <p className="lead">{id}</p>
 
       <style jsx>{`
         img {
@@ -42,13 +46,13 @@ const Profile = props => {
 }
 
 Profile.getInitialProps = async ctx => {
-  const { token } = nextCookie(ctx)
+  const token = ctx.query.token || nextCookie(ctx).token
   const apiUrl = getHost(ctx.req) + '/api/profile'
 
   const redirectOnError = () =>
     typeof window !== 'undefined'
-      ? Router.push('/login')
-      : ctx.res.writeHead(302, { Location: '/login' }).end()
+      ? Router.push('/api/login')
+      : ctx.res.writeHead(302, { Location: '/api/login' }).end()
 
   try {
     const response = await fetch(apiUrl, {
@@ -60,14 +64,11 @@ Profile.getInitialProps = async ctx => {
 
     if (response.ok) {
       const js = await response.json()
-      console.log('js', js)
       return js
     } else {
-      // https://github.com/developit/unfetch#caveats
       return await redirectOnError()
     }
   } catch (error) {
-    // Implementation or Network error
     return redirectOnError()
   }
 }

@@ -1,39 +1,30 @@
 import fetch from 'isomorphic-unfetch'
-import btoa from 'btoa'
-
-const CLIENT_ID = process.env.CLIENT_ID;
-const CLIENT_SECRET = process.env.CLIENT_SECRET;
-const redirect = encodeURIComponent('http://localhost:3000/api/discordauth');
+import DiscordOauth2 from 'discord-oauth2'
 
 export default async (req, res) => {
   try {
+    const oauth = new DiscordOauth2()
     if (!req.query.code) 
         throw new Error('NoCodeProvided');
 
-    const code = req.query.code;
-    const creds = btoa(`${CLIENT_ID}:${CLIENT_SECRET}`);
-    const response = await fetch(`https://discordapp.com/api/oauth2/token?grant_type=authorization_code&code=${code}&redirect_uri=${redirect}`,
-    {
-      method: 'POST',
-      headers: {
-        Authorization: `Basic ${creds}`,
-      },
-    });
+    const response = await oauth.tokenRequest({
+        clientId: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET,
+    
+        code: req.query.code,
+        scope: "identify guilds",
+        grantType: "authorization_code",
+        
+        redirectUri: "http://localhost:3000/api/discordauth"
+    })
 
-    if (response.ok) {
-      const json = await response.json()
-      
-        res.writeHead(302, { Location: `/login?token=${json.access_token}` })
-        return res.end()
-    } else {
-      const error = new Error(response.statusText)
-      error.response = response
-      throw error
-    }
+    res.writeHead(302, { Location: `/profile?token=${response.access_token}` })
+    return res.end()
+
   } catch (error) {
     const { response } = error
     return response
-      ? res.status(response.status).json({ message: response.statusText })
-      : res.status(400).json({ message: error.message })
+        ? res.status(response.status).json({ message: response.statusText })
+        : res.status(400).json({ message: error.message })
   }
 }
