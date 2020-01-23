@@ -1,4 +1,3 @@
-import fetch from 'isomorphic-unfetch'
 import DiscordOauth2 from 'discord-oauth2'
 
 export default async (req, res) => {
@@ -18,8 +17,7 @@ export default async (req, res) => {
         redirectUri: "http://localhost:3000/api/discordauth"
     })
 
-    res.writeHead(302, { Location: `/profile?token=${response.access_token}` })
-    return res.end()
+    return res.writeHead(302, { Location: `/profile?token=${response.access_token}` }).end()
 
   } catch (error) {
     const { response } = error

@@ -3,7 +3,7 @@ import Router from 'next/router'
 import fetch from 'isomorphic-unfetch'
 import nextCookie from 'next-cookies'
 import Layout from '../components/layout'
-import { withAuthSync, login } from '../utils/auth'
+import { withAuthSync } from '../utils/auth'
 import getHost from '../utils/get-host'
 import cookie from 'js-cookie'
 
@@ -66,10 +66,12 @@ Profile.getInitialProps = async ctx => {
       const js = await response.json()
       return js
     } else {
-      return await redirectOnError()
+      console.error(error)
+      //return await redirectOnError()
     }
   } catch (error) {
-    return redirectOnError()
+    console.error(error)
+    //return redirectOnError()
   }
 }
 

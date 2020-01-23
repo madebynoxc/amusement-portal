@@ -4,12 +4,15 @@ import { logout } from '../utils/auth'
 const Header = () => (
   <header>
     <nav>
-      <ul>
+      <ul className="left">
         <li>
           <Link href="/">
-            <a>Home</a>
+            <a>Amusement Club</a>
           </Link>
         </li>
+      </ul>
+
+      <ul>
         <li>
           <Link href="/api/login">
             <a>Login</a>
@@ -26,11 +29,24 @@ const Header = () => (
       </ul>
     </nav>
     <style jsx>{`
+      nav {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 65rem;
+      }
+
       ul {
         display: flex;
         list-style: none;
+        margin-left: auto;
+      }
+
+      ul.left {
+        display: flex;
+        list-style: none;
+        margin-right: auto;
         margin-left: 0;
-        padding-left: 0;
       }
 
       li {
