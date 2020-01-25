@@ -7,25 +7,33 @@ import { withAuthSync } from '../utils/auth'
 import getHost from '../utils/get-host'
 import cookie from 'js-cookie'
 
+import { 
+  GridList,
+  GridListTile,
+  Avatar
+} from '@material-ui/core';
+
 const Profile = props => {
-  console.log(props)
-  const { username, id, avatar } = props.user
+  const { username, id, cards, avatar, discriminator } = props.user
 
   if(props.token)
     cookie.set('token', props.token, { expires: 1 })
 
   return (
     <Layout>
-      <img src={avatar} alt="Avatar" />
-      <h1>{username}</h1>
+      <Avatar alt={username} src={avatar} />
+      <h1>{username}#{discriminator}</h1>
       <p className="lead">{id}</p>
 
-      <style jsx>{`
-        img {
-          max-width: 200px;
-          border-radius: 0.5rem;
-        }
+      <GridList spacing={10} cellHeight={'auto'} cols={4}>
+        {cards.map((x, i) => (
+          <GridListTile key={x.url}>
+            <img src={x.url} className='card'/>
+          </GridListTile>
+        ))}
+      </GridList>
 
+      <style jsx>{`
         h1 {
           margin-bottom: 0;
         }
@@ -47,7 +55,8 @@ const Profile = props => {
 
 Profile.getInitialProps = async ctx => {
   const token = ctx.query.token || nextCookie(ctx).token
-  const apiUrl = getHost(ctx.req) + '/api/profile'
+  //const apiUrl = getHost(ctx.req) + '/api/profile'
+  const apiUrl = 'http://noxcaos.ddns.net:3000/api/profile'
 
   const redirectOnError = () =>
     typeof window !== 'undefined'

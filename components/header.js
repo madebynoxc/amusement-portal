@@ -13,9 +13,9 @@ const Header = () => (
       </ul>
 
       <ul>
-        <li>
-          <Link href="/api/login">
-            <a>Login</a>
+      <li>
+          <Link href="/cards">
+            <a>Cards</a>
           </Link>
         </li>
         <li>
@@ -23,9 +23,7 @@ const Header = () => (
             <a>Profile</a>
           </Link>
         </li>
-        <li>
-          <button onClick={logout}>Logout</button>
-        </li>
+
       </ul>
     </nav>
     <style jsx>{`
@@ -45,27 +43,27 @@ const Header = () => (
       ul.left {
         display: flex;
         list-style: none;
-        margin-right: auto;
         margin-left: 0;
+        padding-left: 1em;
       }
 
       li {
         margin-right: 1rem;
       }
 
-      li:first-child {
-        margin-left: auto;
-      }
-
       a {
-        color: #fff;
+        color: #9f9f9f;
         text-decoration: none;
       }
 
-      header {
-        padding: 0.2rem;
+      a:hover {
         color: #fff;
-        background-color: #333;
+      }
+
+      header {
+        color: #9f9f9f;
+        background-color: #222;
+        font-size: 20px;
       }
     `}</style>
   </header>

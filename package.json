@@ -21,6 +21,8 @@
     "next": "latest",
     "next-cookies": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-infinite-scroll-component": "^5.0.4",
+    "react-responsive": "^8.0.3"
   }
 }

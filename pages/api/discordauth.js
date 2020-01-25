@@ -14,7 +14,8 @@ export default async (req, res) => {
         scope: "identify guilds",
         grantType: "authorization_code",
         
-        redirectUri: "http://localhost:3000/api/discordauth"
+        //redirectUri: "http://localhost:3000/api/discordauth"
+        redirectUri:"http://noxcaos.ddns.net:3000/api/discordauth"
     })
 
     return res.writeHead(302, { Location: `/profile?token=${response.access_token}` }).end()
