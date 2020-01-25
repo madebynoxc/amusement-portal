@@ -16,8 +16,11 @@ import {
 const Profile = props => {
   const { username, id, cards, avatar, discriminator } = props.user
 
-  if(props.token)
+  if(props.token) {
     cookie.set('token', props.token, { expires: 1 })
+    cookie.set('username', username, { expires: 1 })
+    cookie.set('avatar', avatar, { expires: 1 })
+  }
 
   return (
     <Layout>

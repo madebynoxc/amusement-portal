@@ -7,6 +7,7 @@ const Layout = props => (
   <>
     <Head>
       <title>Amusement Club Gacha</title>
+      <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width"/>
     </Head>
     <style jsx global>{`
       *,
