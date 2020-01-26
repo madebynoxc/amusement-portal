@@ -89,7 +89,7 @@ const Header = (props) => {
             <MenuIcon />
           </IconButton>):
           (<IconButton color="inherit">
-          <Link href="/">
+            <Link href="/">
               <img src={'https://amusementclub.nyc3.digitaloceanspaces.com/web/bun_noline.png'} className={classes.avatar} />
             </Link>
           </IconButton>

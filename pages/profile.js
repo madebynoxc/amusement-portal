@@ -6,6 +6,7 @@ import Layout from '../components/layout'
 import { withAuthSync } from '../utils/auth'
 import getHost from '../utils/get-host'
 import cookie from 'js-cookie'
+import CardView from '../components/cardview'
 
 import { 
   GridList,
@@ -28,6 +29,7 @@ const Profile = props => {
       <h1>{username}#{discriminator}</h1>
       <p className="lead">{id}</p>
 
+      <CardView cards={cards} />
       <GridList spacing={10} cellHeight={'auto'} cols={4}>
         {cards.map((x, i) => (
           <GridListTile key={x.url}>

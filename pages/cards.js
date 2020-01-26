@@ -2,31 +2,16 @@ import React from 'react'
 import Router from 'next/router'
 import fetch from 'isomorphic-unfetch'
 import Layout from '../components/layout'
+import CardView from '../components/cardview'
 import getHost from '../utils/get-host'
-import { useMediaQuery } from 'react-responsive'
-
-import { 
-  GridList,
-  GridListTile,
-} from '@material-ui/core';
 
 const Cards = props => {
-  //console.log(props)
-  let { cards, type } = props
-  cards = cards.filter(x => x)
-
-  const isTabletOrMobile = useMediaQuery({ maxWidth: 1224 })
+  const cards = props.cards.filter(x => x)
 
   return (
       <Layout>
-        <h1>{type === 'claim'? "Your claimed cards:" : ""}</h1>
-        <GridList spacing={10} cellHeight={'auto'} cols={isTabletOrMobile? 2 : 4}>
-            {cards.map((x, i) => (
-              <GridListTile key={x.url}>
-                <img src={x.url} className='card'/>
-              </GridListTile>
-            ))}
-        </GridList>
+        <h1>{props.type === 'claim'? "Your claimed cards:" : ""}</h1>
+        <CardView cards={cards} cols={props.cols} />
 
         <style jsx>{`
           h1 {
