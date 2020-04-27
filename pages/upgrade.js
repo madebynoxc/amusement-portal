@@ -68,6 +68,13 @@ export default class Votes extends React.Component {
                     <p>There is no tomato cost for liquefying cards</p>
                     <p>Requires Smith Hub Level 2 (<b>Guild</b>)</p>
 
+                    <h2>Draw</h2>
+                    <p>With your newly gotten 🍷 vials you can now <code>->draw [card]</code> cards. </p>
+                    <p>Drawing is limited to the same restrictions as <b>Liquify</b> 1-3★ range, as well as you are unable to draw cards that currently have no market supply. Cards need an eval price to get a vial cost, meaning you can't be the first person with a card via draw.</p>
+                    <p>You cannot go into debt with 🍷 vials, you need to have as many vials as you want to use to draw a card</p>
+                    <p>Requires Smith Hub Level 2 (<b>Guild</b>)</p>
+                    <p>No, you cannot draw craft cards, craft cards are dead. Long live craft cards</p>
+
                     <h2>Forging</h2>
                     <p>Gone are the days of 1+1=2, 2+2=3 and 3+3=3. Now everything is equal with 1+1=1, and so on. Forging no longer gives you a card of the next rarity. Forging a 1 star and a 1 star will get you a 1 star.</p>
                     <p>Forging cards now costs tomatoes relative to card cost and rarity. You will also recieve vials for forging</p>
@@ -186,6 +193,9 @@ export default class Votes extends React.Component {
                     <b>The Judgment Day</b> | Grants effect of any useable card<br/>
                     <b>The Judgment Day</b> | (same effect)
                     </p>
+
+                    <h2>Got questions?</h2>
+                    <p>Head over to the <a href="https://discord.gg/XKXp666" style={{color: "#eb2196"}}>#support channel of bot's Discord</a></p>
 
                     <div style={{height: "50px"}}/>
                 </div>
