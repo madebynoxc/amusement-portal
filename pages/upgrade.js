@@ -94,7 +94,7 @@ export default class Votes extends React.Component {
                     <p><b>Auction House:</b> The auction house must be built to allow you to sell cards on auction, decrease auction fees, and specify auction length.</p>
                     <p><b>Smithing Hub:</b> This building is required for all forging, liquify, and draw actions. Level 1 allows forging, Level 2 allows <b>Liquify</b> and <b>Draw</b>, Level 3 allows the crafting of effects.</p>
                     <p><b>Hero's Quarters:</b> This building lets a guild have a hero. Hero gets chosen based on amount of followers and the guild rank of the followers of a hero in the guild.</p>
-                    <p><b>Gacha Bank:</b> This building increases daily amountat level 1, enables 4 star drops at level 2, and adds user level amount of tomatoes to guild balance when a user runs <code>->daily</code>. Note this is the building that will re-enable 4 star drops in servers.</p>
+                    <p><b>Gacha Bank:</b> This building increases daily amount at level 1, enables 4 star drops at level 2, and adds user level amount of tomatoes to guild balance when a user runs <code>->daily</code>. Note this is the building that will re-enable 4 star drops in servers.</p>
                     <p><b>Tavern:</b> The tavern adds a daily quest per level with the first two levels. Level 3 will unlock quest lines.</p>
 
                     <h2>Inventory</h2>
