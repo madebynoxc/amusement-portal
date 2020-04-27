@@ -81,7 +81,7 @@ export default class Votes extends React.Component {
                     <p>You can do <code>->forge [card]</code> and the bot will pick another card within the same rarity and next in name length to forge the selected card with so be careful!</p>
 
                     <h2>Guild Management</h2>
-                    <p>Guild tax can now be set if the guild contains a Castle(See buildings), with <code>->guild set tax [rate]</code> This will tax claims for a certain percentage and have this tax placed in the guild balance.</p>
+                    <p>Guild tax can now be set if the guild contains a Castle(See below), with <code>->guild set tax [rate]</code> This will tax claims for a certain percentage and have this tax placed in the guild balance.</p>
                     <p><code>->guild info</code> shows basic information about the current guild such as Guild Level, # of players, Tax %, Building Permissions, as well as the user running the commands, Rank, Progress to next rank, and guild roles(if any).</p>
                     <p>Guild mods/managers have been added, these people are the only ones allowed to lock a guild to a specific collection with <code>->guild lock [col]</code>. Locking costs 100k 🍅 Tomatoes up front and 5000 🍅 Tomatoes a day to keep the lock.</p>
                     <p>To add a Guild mod/manager you need to be server owner and run <code>->guild add mod/manager @user</code>. Please note it's either mod or manager, you do not need both.</p>
@@ -99,7 +99,7 @@ export default class Votes extends React.Component {
 
                     <h2>Inventory</h2>
                     <p>The inventory acts much like before, but now it will hold guild buildings, legendary tickets, and effect recipes. </p>
-                    <p>Current possible inventory items are <code>Legendary Ticket, Effect Recipe, Guild Castle, Auction House, Smithing Hub, Gacha Bank, Hero's Quarters, Tavern</code> (Last 6 will be covered in <b>Guild</b>).</p>
+                    <p>Current possible inventory items are <code>Legendary Ticket, Effect Recipe, Guild Castle, Auction House, Smithing Hub, Gacha Bank, Hero's Quarters, Tavern</code> (Last 6 were covered above).</p>
                     <p><code>Legendary Ticket</code> or <code>legendticket</code> as it is used in <code>->inv use</code> grants you (1) legendary card from the collection. It will not grant duplicates until you have 1 of each of the legendaries for the collection.</p>
 
                     <h2>Query</h2>
