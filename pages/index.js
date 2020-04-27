@@ -56,6 +56,15 @@ export default class Index extends React.Component {
                     </div>
 
                     <div className="article">
+                        <h1>Important notice</h1>
+                        <p>
+                            At the start of <b>June 2020</b> Amusement Club will be upgraded to new version (known as 2.0) containing multiple improvements and features. 
+                            However, a lot of current functionality will be replaced and changed.
+                        </p>
+                        <p><a href="/upgrade" style={{color: "#eb2196"}}>More information here</a></p>
+                    </div>
+
+                    <div className="article">
                         <h1>...what is this?</h1>
                         <div>
                             <b>Amusement Club</b> is a global gacha game for Discord with thousands of cute and fancy cards made by the bot's community.
