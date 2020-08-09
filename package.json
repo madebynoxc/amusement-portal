@@ -13,17 +13,17 @@
   "license": "ISC",
   "repository": "https://github.com/NoxCaos/amusement-portal",
   "dependencies": {
-    "@material-ui/core": "^4.9.0",
-    "@material-ui/icons": "^4.5.1",
-    "discord-oauth2": "latest",
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "discord-oauth2": "^2.3.0",
     "isomorphic-unfetch": "latest",
     "js-cookie": "latest",
-    "mongodb": "^3.5.2",
-    "next": "latest",
+    "mongodb": "^3.6.0",
+    "next": "^9.5.1",
     "next-cookies": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "react-infinite-scroll-component": "^5.0.4",
-    "react-responsive": "^8.0.3"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-infinite-scroll-component": "^5.0.5",
+    "react-responsive": "^8.1.0"
   }
 }

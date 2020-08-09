@@ -7,7 +7,7 @@ const Layout = props => (
   <>
     <Head>
       <title>Amusement Club Gacha</title>
-      <meta charset="utf-8" />
+      <meta charSet="utf-8" />
       <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width"/>
       <meta name="description" content="Amusement Club is a global Discord bot for collecting amazing cards from your favourite show or game! Gift a fun game to your Discord community!" />
       <meta property="og:title" content="Amusement Club: Discord gacha" />
@@ -53,6 +53,23 @@ const Layout = props => (
         opacity: .25;
         cursor: pointer;
         transition: .25s;
+      }
+
+      pre code {
+        background-color: rgba(20,20,20,0.3);
+        border-radius: 3px;
+        display: block;
+        padding: 20px;
+      }
+
+      code {
+        display: inline;
+        font-family: Consolas, Menlo, Courier, monospace;
+        padding: 0.2em 0.4em;
+        margin: 0;
+        font-size: 85%;
+        border-radius: 3px;
+        background-color: rgba(20,20,20,0.3);
       }
 
     `}</style>
