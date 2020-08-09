@@ -60,8 +60,8 @@ const Profile = props => {
 
 Profile.getInitialProps = async ctx => {
   const token = ctx.query.token || nextCookie(ctx).token
-  //const apiUrl = getHost(ctx.req) + '/api/profile'
-  const apiUrl = 'http://noxcaos.ddns.net:3000/api/profile'
+  const apiUrl = getHost(ctx.req) + '/api/profile'
+  //const apiUrl = 'http://noxcaos.ddns.net:3000/api/profile'
 
   const redirectOnError = () =>
     typeof window !== 'undefined'

@@ -23,8 +23,8 @@ const Cards = props => {
 }
 
 Cards.getInitialProps = async ctx => {
-  //const apiUrl = getHost(ctx.req) + '/api/cards'
-  const apiUrl = 'http://noxcaos.ddns.net:3000/api/cards'
+  const apiUrl = getHost(ctx.req) + '/api/cards'
+  //const apiUrl = 'http://noxcaos.ddns.net:3000/api/cards'
 
   try {
     const response = await fetch(apiUrl, {

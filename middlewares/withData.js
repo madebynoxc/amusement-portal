@@ -10,10 +10,10 @@ cards.map(x => {
 })
 
 const withData = handler => (req, res) => {
-  req.cards = cards
-  req.collections = collections
-  req.items = items
-  return handler(req, res)
+    req.cards = cards
+    req.collections = collections
+    req.items = items
+    return handler(req, res)
 }
 
 export default withData
