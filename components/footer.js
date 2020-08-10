@@ -42,6 +42,67 @@ export default class Footer extends React.Component {
                     </div>
                     
                 </div>
+                <style jsx>{`
+                .footer {
+                    width: 100%;
+                    bottom: 0;
+                    color: '#fff'
+                    background-color: #2c2c2c;
+                }
+
+                .footer .content {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    margin: auto;
+                    vertical-align: top;
+                }
+
+                  .footer .content .block {
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 200px;
+                    margin: 20px 0;
+                  }
+
+                    .footer .content .block span {
+                      display: block;
+                      font-size: 14px;
+                    }
+
+                    .footer .content .block span.title {
+                      font-weight: bold;
+                      font-size: 25px;
+                    }
+
+                    .footer .content .block ul {
+                      list-style: none;
+                      padding: 0;
+                    }
+
+                      .footer .content .block ul li {
+                        opacity: .6;
+                      }
+
+                      .footer .content .block ul li:hover {
+                        opacity: 1;
+                      }
+
+                  .footer .content img {
+                    width: 136px;
+                    margin-bottom: 10px;
+                  }
+
+                  .footer .content .centered-span {
+                      display: block;
+                      width: 100%;
+                      font-size: 14px;
+                      text-align: center;
+                      margin-top: -20px;
+                      margin-bottom: 20px;
+                  }
+
+            `}</style>
             </div>
         )
     }

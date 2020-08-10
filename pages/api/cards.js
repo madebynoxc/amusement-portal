@@ -16,4 +16,4 @@ const handler = async (req, res) => {
   }
 }
 
-export default withMongo(withData(handler))
+export default withData(handler)

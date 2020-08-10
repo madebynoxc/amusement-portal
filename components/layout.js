@@ -28,11 +28,16 @@ const Layout = props => (
 
       body {
         margin: 0;
-        color: #fff;
-        background-color: #36393e;
+        background-color: #333639;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
           'Helvetica Neue', Arial, Noto Sans, sans-serif, 'Apple Color Emoji',
           'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 25px;
+        letter-spacing: 1px;
+        color: #fff;
       }
 
       .container {
@@ -40,19 +45,6 @@ const Layout = props => (
         margin: 1.5rem auto;
         padding-left: 1rem;
         padding-right: 1rem;
-      }
-
-      .container .card {
-        width: 100%;
-        margin: 0;
-        border-radius: 1rem;
-        transition: .25s;
-      }
-
-      .container .card:hover {
-        opacity: .25;
-        cursor: pointer;
-        transition: .25s;
       }
 
       pre code {
@@ -70,6 +62,29 @@ const Layout = props => (
         font-size: 85%;
         border-radius: 3px;
         background-color: rgba(20,20,20,0.3);
+      }
+
+      h1 {
+        width: 100%;
+        display: block;
+        font-size: 40px;
+        font-weight: 700;
+        color: #2b9ab5;
+        margin: 30px 0;
+      }
+
+      h2 {
+        width: 100%;
+        display: block;
+        font-size: 30px;
+        font-weight: 600;
+        color: #2b9ab5;
+      }
+
+      a {
+        text-decoration: none;
+        color: #eb2196;
+        font-weight: 500;
       }
 
     `}</style>

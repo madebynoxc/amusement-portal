@@ -81,6 +81,7 @@ const Header = (props) => {
 
   return (
     <header>
+      <div className="alexandrite-header"></div>
       <AppBar position="static" className={classes.appbar}>
         <Toolbar variant="dense" className={classes.toolbar}>
 
@@ -90,7 +91,7 @@ const Header = (props) => {
           </IconButton>):
           (<IconButton color="inherit">
             <Link href="/">
-              <img src={'https://amusementclub.nyc3.digitaloceanspaces.com/web/bun_noline.png'} className={classes.avatar} />
+              <img src={'https://amusementclub.nyc3.digitaloceanspaces.com/web/buns_logo2.png'} className={classes.avatar} />
             </Link>
           </IconButton>
           )}
@@ -111,19 +112,19 @@ const Header = (props) => {
 
           <div className={classes.grow} />
 
-          <Link href="/cards">
+          <Link href="/">
             <Button color="inherit">Cards</Button>
           </Link>
 
-          <Link href="/cards">
-            <Button color="inherit">Auctions</Button>
+          <Link href="/upgrade">
+            <Button color="inherit">Upgrade Guide</Button>
           </Link>
 
-          <Link href="/cards">
+          {/*<Link href="/cards">
             <Button color="inherit">Store</Button>
-          </Link>
+          </Link>*/}
 
-          <Link href="/cards">
+          <Link href="/">
             <Button color="inherit">Help</Button>
           </Link>
 
@@ -138,7 +139,7 @@ const Header = (props) => {
               <Settings />
             </Badge>
           </IconButton>
-          {username && avatar? (
+          {/*username && avatar? (
             <IconButton color="inherit">
               <Link href="/profile">
                 <Avatar alt={username} src={avatar} className={classes.avatar} />
@@ -148,7 +149,7 @@ const Header = (props) => {
             <Link href="/api/login">
               <Button color="inherit">Login</Button>
             </Link>
-          )}
+          )*/}
         </Toolbar>
       </AppBar>
       <style jsx>{`
@@ -191,6 +192,15 @@ const Header = (props) => {
           color: #9f9f9f;
           background-color: #222;
           font-size: 20px;
+        }
+
+        .alexandrite-header {
+          width: 100%;
+          height: 5px;
+          background: linear-gradient(to right, #eb2196, #0d4acf, #2b9ab5);
+          box-shadow: 0px -1px 5px 0px rgba(0, 0, 0, 0.2), 
+                      0px -2px 2px 0px rgba(0, 0, 0, 0.14), 
+                      0px -3px 1px -2px rgba(0, 0, 0, 0.12);
         }
       `}</style>
     </header>

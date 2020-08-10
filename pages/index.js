@@ -1,252 +1,143 @@
 import React from 'react'
+import Button from '@material-ui/core/Button'
+import Icon from '@material-ui/core/Icon'
 import Layout from '../components/layout'
-import Footer from '../components/footer';
-import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
-import Card from '@material-ui/core/Card';
-import Icon from '@material-ui/core/Icon';
+import { withStyles } from '@material-ui/core/styles'
+import getHost from '../utils/get-host'
 
-const Home = () => (
+const styles = {
+  button: {
+    'display': 'block',
+    'background-color': '#222',
+    'font-size': '25px',
+    'font-weight': 600,
+    'padding': '15px',
+    'color': '#fff',
+    'margin': '80px auto',
+    'left': 0,
+    'right': 0,
+    '&:hover': {
+      'background-color': '#444',
+    }
+  },
+
+  buttonimg: {
+    'vertical-align': 'bottom',
+    'margin-right': '15px',
+  },
+
+  'buttonspan': {
+    'display': 'block',
+    'vertical-align': 'top',
+    'background': 'radial-gradient(#eb2196, #0d4acf, #2b9ab5)',
+    'background-size': '500% 500%',
+    'background-clip': 'text',
+    'text-fill-color': 'transparent',
+    '-webkit-background-clip': 'text',
+    '-webkit-text-fill-color': 'transparent',
+    'animation': 'shine 45s linear infinite',
+  },
+}
+
+const Home = props => {
+  const cards = props.cards.filter(x => x)
+  const { classes } = props;
+
+  return (
     <Layout>
-    <div className="main">
-        <div className="container">
-
-            <div className="article">
-                <h1>...what is this?</h1>
-                <div>
-                    <b>Amusement Club</b> is a global gacha game for Discord with thousands of cute and fancy cards made by the bot's community.
-                    <br/><br/>
-                    You can get started on any server by typing <code>->claim</code> in a bot channel. You will get your first card and special card of the day if you are new player. Each claim will cost you more <b>tomatoes</b> (in-game currency)<br/>
-                    <code>->daily</code> will reset your claim cost and give you extra tomatoes.<br/>
-                    Collect more cards and get a <b>hero</b> to unlock full game potential!<br/>
-                    <code>->help</code> will explain all other functionality<br/>
-                </div>
-            </div>
-
-            <div className="article">
-                <h1>you can also...</h1>
-                <img src="https://amusementclub.nyc3.digitaloceanspaces.com/web/trade.jpg"/>
-
-                <div className="feature">
-                    <div className="title">Trade</div><br/>
-                    cards with other players globally. Your card list is the same on any server throughout Discord. Take this opportunity to visit more servers and meet new people!<br/>
-                    You can type <code>->sell @user card_name</code> a card to player and get bot evaluated price in <b>tomatoes</b>
-                </div>
-            </div>
-
-            <div className="article">
-                <img src="https://amusementclub.nyc3.digitaloceanspaces.com/web/hero.jpg"/>
-
-                <div className="feature">
-                    <div className="title">Get a Hero</div><br/>
-                    who will open full bot features for you once you have <b>50 stars</b><br/>
-                    Each hero has various abilities that fit your own unique play style<br/>
-                    Typing <code>->hero</code> will summon your current hero
-                </div>
-            </div>
-
-            <div className="article">
-                <img src="https://amusementclub.nyc3.digitaloceanspaces.com/web/forge.jpg"/>
-
-                <div className="feature">
-                    <div className="title">Forge</div><br/>
-                    your cards and get new one with higher rarity.<br/>
-                    Typing <code>->forge card_1, card_2</code> will consume two cards of the same level giving you a card <b>one level higher</b>
-                </div>
-            </div>
-
-            <div className="article">
-                <img src="https://amusementclub.nyc3.digitaloceanspaces.com/web/auction.jpg"/>
-
-                <div className="feature">
-                    <div className="title">Participate in auctions</div><br/>
-                    where you can sell or bid on cards competing with other players typing<br/>
-                    <code>->auc</code> will show all current auctions<br/>
-                    This feature is available once you have a hero
-                </div>
-            </div>
-
-            <div style={{height: "50px"}}/>
+      <div className="container">
+        <div>
+          <img src={cards[0].url} className='card'/>
+          <img src={cards[1].url} className='card'/>
+          <img src={cards[2].url} className='card'/>
         </div>
-    </div>
+
+        <div style={{height: '50px'}}></div>
+        {/*<Icon className="button-icon"><img src="https://amusementclub.nyc3.cdn.digitaloceanspaces.com/web/alexandritepfp.jpg" /></Icon>*/}
+
+        <h1 style={{'text-align': 'center'}}>Amusement Club: Global Gacha for Discord</h1>
+        <h3 style={{'text-align': 'center'}}>Claim and create cards, build your guild, choose your hero character craft various effects and trade on auctions. 
+          All your progress is transferred between Discord servers</h3>
+
+        <Button variant="contained" className={props.classes.button}>
+            {/*<Icon className={props.classes.buttonimg}><img src="https://amusementclub.nyc3.digitaloceanspaces.com/web/discord_logo.svg"/></Icon>*/}
+            <span className={props.classes.buttonspan}>Add to Discord</span>
+        </Button>
+      </div>
+        
     <style jsx>{`
-        .container {
-          width: 800px;
-          margin: auto;
-          color: #fff;
+
+      body {
+        background-image: url(https://amusementclub.nyc3.cdn.digitaloceanspaces.com/web/blurback.jpg);
+      }
+
+      .container {
+        width: 100%;
+        margin: auto;
+        color: #fff;
+      }
+
+      .container .card {
+        width: 250px;
+        margin: 0 35px;
+      }
+
+      h2 {
+        color: #fff;
+      }
+
+      .head-content button:hover {
+        background-color: #2c2c2c;
+      }
+
+        .head-content button > span:first-child {
+          display: block;
+          vertical-align: top;
+          background: radial-gradient(#ebb35b,  #e8ad5a, #f8d148, #adcd86, #5abec1, #4faeb1, #5abec1, #adcd86, #f8d148, #e8ad5a, #ebb35b); 
+          background-size: 500% 500%;
+          background-clip: text;
+          text-fill-color: transparent;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: shine 45s linear infinite;
         }
-          
-          .container .video {
-            display: inline-block;
-            width: 400px;
-            margin-left: 50px;
-            margin-top: 20px;
-            vertical-align: top;
-            background-color: #35383E;
+
+        .head-content button img {
+          vertical-align: bottom;
+        }
+
+        .head-content button img {
+          margin-right: 15px;
+        }
+
+        @keyframes shine {
+          to {
+            background-position: 500% 500%;
           }
-
-            .container .video video {
-              width: 100%;
-            }
-          
-          .container .article {
-            margin-top: 30px;
-            width: 100%;
-          }
-
-            .container .article span {
-              display: block;
-              margin: 0 150px;
-              margin-bottom: 20px;
-              text-align: center;
-            }
-
-            .container .article h1 {
-              width: 100%;
-              display: block;
-              font-size: 35px;
-              font-weight: 300;
-              color: #e8ad5a;
-              text-align: center;
-              margin: 30px 0;
-            }
-
-            .container .article .title {
-              display: inline-block;
-              font-size: 30px;
-              color: #4faeb1;
-              vertical-align: top;
-              margin-top: 10px;
-              margin-bottom: 20px;
-              font-weight: 600;
-            }
-
-              .container .article div {
-                display: inline-block;
-                font-size: 18px;
-                font-weight: 300;
-                line-height: 25px;
-                letter-spacing: 1px;
-                width: 350px;
-                vertical-align: top;
-              }
-
-              .container .article div.feature {
-                margin-top: 20px;
-                margin-left: 30px;
-                width: 400px;
-                height: 100%;
-              }
-
-              .container .article img {
-                display: inline-block;
-                font-size: 18px;
-                font-weight: 300;
-                line-height: 25px;
-                letter-spacing: 1px;
-                margin-top: 20px;
-                width: 350px;
-                border-radius: 4px;
-                vertical-align: top;
-                box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 
-                            0px 2px 2px 0px rgba(0, 0, 0, 0.14), 
-                            0px 3px 1px -2px rgba(0, 0, 0, 0.12);
-              }
-
-              .container .article .card {
-                display: inline-block;
-                margin: 10px;
-                background-color: #2c2c2c;
-                width: 245px;
-                transition: .5s;
-              }
-
-              .container .article .card:hover {
-                transition: .25s;
-              } 
-
-                .container .article .card h3 {
-                  margin: 10px 0;
-                  font-size: 20px;
-                  width: 100%;
-                  text-align: center;
-                }
-
-                  .container .article .card h3 b {
-                    font-size: 32px;
-                    color: #4faeb1;
-                  }
-
-                .container .article .card p {
-                  margin: 5px 0;
-                  font-size: 17px;
-                  width: 100%;
-                  text-align: center;
-                }
-
-                .container .article .card img {
-                  width: 100%;
-                  margin: 0;
-                  transition: .25s;
-                }
-
-                .container .article .card img:hover {
-                  opacity: .15;
-                  transition: .25s;
-                }
-
-                .container .article .card div.caption {
-                  display: block;
-                  position: absolute;
-                  width: 245px;
-                  text-align: center;
-                  margin-top: -250px;
-                  opacity: 0;
-                  transition: .25s;
-                  pointer-events: none;
-                }
-
-                  .container .article .card div.caption img {
-                    display: block;
-                    border-radius: 100%;
-                    width: 50px;
-                    margin: auto;
-                    margin-bottom: 20px;
-                  }
-
-                .container .article .card img:hover + div {
-                  opacity: 1;
-                  transition: .25s;
-                }
-
-          .container .stats {
-            width: 100%;
-          }
-
-            .container .stats div {
-              display: inline-block;
-              margin: auto;
-              text-align: center;
-              margin-top: 25px;
-              width: 160px;
-              white-space: nowrap;
-            }
-
-              .container .stats div span {
-                display: block;
-                font-size: 22px;
-                font-weight: 900;
-                /*color: #e8ad5a;*/
-              }
-
-              .container .stats div span.numbers {
-                font-size: 35px;
-                color: #5fc3c7;
-                margin: 10px 0;
-                animation: shine2 10s linear infinite;
-              }
-    `}</style>
+        }
+      `}</style>
     </Layout>
-)
+  )
+}
 
-export default Home
+Home.getInitialProps = async ctx => {
+  const apiUrl = getHost(ctx.req) + '/api/home'
+
+  try {
+    const response = await fetch(apiUrl)
+
+    if (response.ok) {
+      const js = await response.json()
+      js.type = ctx.query.type
+      return js
+
+    } else {
+      throw new Error(response.statusText)
+    }
+  } catch (error) {
+    console.error(error)
+    return {}
+  }
+}
+
+export default withStyles(styles)(Home)

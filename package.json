@@ -18,12 +18,15 @@
     "discord-oauth2": "^2.3.0",
     "isomorphic-unfetch": "latest",
     "js-cookie": "latest",
+    "lodash": "^4.17.19",
     "mongodb": "^3.6.0",
     "next": "^9.5.1",
     "next-cookies": "latest",
+    "nprogress": "^0.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-infinite-scroll-component": "^5.0.5",
+    "react-lodash": "^0.1.2",
     "react-responsive": "^8.1.0"
   }
 }

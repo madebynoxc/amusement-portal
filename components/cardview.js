@@ -83,6 +83,7 @@ const CardView = props => {
 
   return (
     <cardview>
+        {/*
       <Container>
         {cols.length > 0 &&
         <FormControl className={classes.formControl}>
@@ -91,8 +92,7 @@ const CardView = props => {
             labelId="col-simple-select-label"
             id="col-simple-select"
             value={col}
-            onChange={handleColChange}
-          >
+            onChange={handleColChange}>
             <MenuItem value='all'>All</MenuItem>
             {cols.map(x => (
               <MenuItem value={x.id}>{x.name}</MenuItem>
@@ -135,7 +135,7 @@ const CardView = props => {
           </Select>
         </FormControl>
       </Container>
-      <hr/>
+      <hr/>*/}
       <GridList spacing={10} cellHeight={'auto'} cols={isTabletOrMobile? 2 : 4}>
         {props.cards.map((x, i) => (
           <GridListTile key={x.url}>

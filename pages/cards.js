@@ -17,6 +17,19 @@ const Cards = props => {
           h1 {
             margin-bottom: 2rem;
           }
+
+          .container .card {
+            width: 100%;
+            margin: 0;
+            border-radius: 1rem;
+            transition: .25s;
+          }
+
+          .container .card:hover {
+            opacity: .25;
+            cursor: pointer;
+            transition: .25s;
+          }
         `}</style>
       </Layout>
   )
